@@ -6,7 +6,6 @@ from ball import Ball
 from score_board import Scoreboard
 from lives import Life
 import time
-import tkinter
 timer_for_speed_increase = 0
 # screen = Screen()
 
