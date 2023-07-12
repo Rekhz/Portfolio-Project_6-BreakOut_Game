@@ -6,6 +6,7 @@ from ball import Ball
 from score_board import Scoreboard
 from lives import Life
 import time
+import tkinter
 timer_for_speed_increase = 0
 # screen = Screen()
 
@@ -34,7 +35,7 @@ def start_game():
         floor_hit_count = 5
         g.create_bricks()
         b.ball_movement()
-        turtle.getcanvas().bind('<Motion>', p.move_paddle)
+        turtle.getcanvas().bind('<Motion>', p.move_paddle) # mouse movement is binded with paddle
         turtle.tracer(1)
         turtle.update()
         should_continue=True
@@ -102,9 +103,9 @@ def start_game():
 
             time.sleep(2)
 
-    except turtle.Terminator:
+    except (turtle.Terminator, tkinter.TclError):
 
-       exit()
+            exit()
 
 start_game()
 
